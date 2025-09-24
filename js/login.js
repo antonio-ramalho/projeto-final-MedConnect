@@ -22,7 +22,14 @@ async function login() {
   alert(resposta.msg);
 
   if (resposta.value) {
+    const id_usuario = resposta.id;
+    const params = new URLSearchParams();
+
+    localStorage.setItem('usuarioLogado', 'true');
     localStorage.setItem("usuarioLogado", resposta.user);
-    window.location.href = "../html/cordenador.html";
+    params.append('id', id_usuario);
+    window.location.href = `coordenador.html?${params.toString()}`;
+  } else {
+    localStorage.setItem('usuarioLogado', 'false');
   }
 }
