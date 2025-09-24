@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --azul-escuro: #013561;
+  --azul-claro: #6bb3f2;
+  --azul-claro-50: rgba(107, 179, 242, 0.5);
+  --fundo-gelo: #edf3fb;
+}

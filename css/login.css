@@ -1,0 +1,38 @@
+#login-body {
+  background-color: var(--fundo-gelo);
+  height: 100vh;
+}
+
+#imagem-body {
+  background-color: var(--azul-escuro);
+  height: 100vh;
+}
+
+.card-fundo {
+  background-color: var(--azul-escuro) !important;
+  border-radius: 30px !important;
+}
+
+.card #botao-login {
+  background-color: var(--azul-claro);
+  border: none;
+  border-radius: 20px;
+  height: 50px;
+  transition: 0.2s;
+}
+
+.card #botao-login:hover {
+  background-color: var(--azul-claro-50);
+}
+
+.input-estilo {
+  background-color: var(--azul-claro-50) !important;
+  border-color: var(--azul-claro-50) !important;
+  color: white !important;
+  border-radius: 20px !important;
+  height: 55px !important;
+}
+
+.input-estilo::placeholder {
+  color: white !important;
+}
