@@ -39,5 +39,5 @@ document.addEventListener("DOMContentLoaded", () => {
       carregarPagina(page);
     });
   });
-  carregarPagina("home.html");
+  carregarPagina("dashboard.html");
 });
