@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function verSeEstaLogado() {
     const usuarioLogado = localStorage.getItem("usuarioLogado");
 
-    if (!usuarioLogado) {
+    if (!usuarioLogado || localStorage.getItem('usuarioLogado') === 'false') {
       window.location.href = "../html/login.html";
     }
   }
