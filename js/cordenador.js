@@ -2,9 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
   verSeEstaLogado();
 
   function verSeEstaLogado() {
-    const usuarioLogado = localStorage.getItem("usuarioLogado");
+    const params = new URLSearchParams(window.location.search);
+    const idUsuario = params.get("id");
 
-    if (!usuarioLogado || localStorage.getItem('usuarioLogado') === 'false') {
+    if (!idUsuario) {
       window.location.href = "../html/login.html";
     }
   }
@@ -12,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   mostraNomeUsuario();
 
   function mostraNomeUsuario() {
-    const nomeUsuario = localStorage.getItem("usuarioLogado");
+    const nomeUsuario = localStorage.getItem("nomeUsuario");
     document.getElementById("nome-usuario").textContent = nomeUsuario;
   }
 
