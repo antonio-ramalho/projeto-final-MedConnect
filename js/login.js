@@ -28,7 +28,7 @@ async function login() {
     localStorage.setItem("usuarioLogado", "true");
     localStorage.setItem("nomeUsuario", resposta.user);
     params.append("id", id_usuario);
-    window.location.href = `../html/cordenador.html?${params.toString()}`;
+    window.location.href = `../cordenador/cordenador.html?${params.toString()}`;
   } else {
     localStorage.setItem("usuarioLogado", "false");
   }

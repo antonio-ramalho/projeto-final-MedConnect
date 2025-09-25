@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // funcoes de login e checagem;
   verSeEstaLogado();
 
   function verSeEstaLogado() {
@@ -20,7 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const conteudoPrincipal = document.getElementById("conteudo-principal");
   const links = document.querySelectorAll(".sidebar a");
 
-  function carregarPagina(url) {
+  // Funçoes de carregamento das paginas html na pagina do cordenador;
+
+  function carregarPaginaHtml(url) {
     fetch(url)
       .then((response) => response.text())
       .then((html) => {
@@ -32,13 +35,16 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 
-  links.forEach((link) => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-
-      const page = link.getAttribute("data-page");
-      carregarPagina(page);
+  function selecionarECarregarPagina() {
+    links.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const page = link.getAttribute("data-page");
+        carregarPaginaHtml(page);
+      });
     });
-  });
-  carregarPagina("dashboard.html");
+  }
+
+  selecionarECarregarPagina();
+  carregarPaginaHtml("html/dashboard.html");
 });
