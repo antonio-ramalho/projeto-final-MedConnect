@@ -1,3 +1,8 @@
+/* funcoes importadas */
+
+import {gerarProximoId} from "../../js/script.js";
+import {carregarPaginaHtml} from "../cordenador.js";
+
 function excluirSelecionados(idsParaExcluir) {
   if (idsParaExcluir.length === 0) {
     alert("Nenhum item selecionado para exclusão.");
@@ -111,6 +116,30 @@ export function adicionaListenerDeBusca() {
   conteudoPrincipal.addEventListener("keyup", (e) => {
     if (e.target.id === "input-busca-ambulancias") {
       carregaItens(e.target.value);
+    }
+  });
+}
+
+function armazenar() {
+  var listaClientes = JSON.parse(localStorage.getItem("listaClientes"));
+  const novoId = gerarProximoId(listaClientes);
+
+  var obj = {id: novoId, nome: "", cpf: "", cnh: "", placa: "", status: "Em operação"};
+  obj.nome = document.getElementById("nome-motorista").value;
+  obj.cpf = document.getElementById("cpf-motorista").value;
+  obj.cnh = document.getElementById("cnh-motorista").value;
+  obj.placa = document.getElementById("placa-ambu").value;
+  listaClientes.push(obj);
+  localStorage.setItem("listaClientes", JSON.stringify(listaClientes));
+}
+
+export function cadastrarAmbulancia() {
+  conteudoPrincipal.addEventListener("click", (e) => {
+    if (e.target.id === "enviar-informacoes-motorista") {
+      e.preventDefault();
+
+      armazenar();
+      carregarPaginaHtml("html/ambulancias.html");
     }
   });
 }

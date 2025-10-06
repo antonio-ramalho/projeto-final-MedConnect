@@ -1,6 +1,5 @@
 /* funcoes importadas do script.js*/
 
-import {gerarProximoId} from "../js/script.js";
 import {verificaExistenciaModal} from "../js/script.js";
 
 /* funcoes da ambulancia.js*/
@@ -8,6 +7,7 @@ import {verificaExistenciaModal} from "../js/script.js";
 import {selecionaItenASerExcluido} from "./js/ambulancia.js";
 import {carregaItens} from "./js/ambulancia.js";
 import {adicionaListenerDeBusca} from "./js/ambulancia.js";
+import {cadastrarAmbulancia} from "./js/ambulancia.js";
 
 /* funcoes do cordenador*/
 
@@ -28,7 +28,7 @@ function mostraNomeUsuario() {
 const conteudoPrincipal = document.getElementById("conteudoPrincipal");
 const links = document.querySelectorAll(".sidebar a");
 
-function carregarPaginaHtml(url) {
+export function carregarPaginaHtml(url) {
   verificaExistenciaModal();
 
   fetch(url)
@@ -67,39 +67,13 @@ function gerenciarEstadoAtivo(linkAtivo) {
   }
 }
 
-/* funcoes hub da ambulancia */
-
-function armazenar() {
-  var listaClientes = JSON.parse(localStorage.getItem("listaClientes"));
-  const novoId = gerarProximoId(listaClientes);
-
-  var obj = {id: novoId, nome: "", cpf: "", cnh: "", placa: "", status: "Em operação"};
-  obj.nome = document.getElementById("nome-motorista").value;
-  obj.cpf = document.getElementById("cpf-motorista").value;
-  obj.cnh = document.getElementById("cnh-motorista").value;
-  obj.placa = document.getElementById("placa-ambu").value;
-  listaClientes.push(obj);
-  localStorage.setItem("listaClientes", JSON.stringify(listaClientes));
-}
-
-function cadastrarAmbulancia() {
-  conteudoPrincipal.addEventListener("click", (e) => {
-    if (e.target.id === "enviar-informacoes-motorista") {
-      e.preventDefault();
-
-      armazenar();
-      carregarPaginaHtml("html/ambulancias.html");
-    }
-  });
-}
-
 /* loop principal */
 
 document.addEventListener("DOMContentLoaded", () => {
   verSeEstaLogado();
   mostraNomeUsuario();
-  selecionarECarregarPagina();
   carregarPaginaHtml("html/dashboard.html");
+  selecionarECarregarPagina();
   selecionaItenASerExcluido();
   cadastrarAmbulancia();
   adicionaListenerDeBusca();
