@@ -1,0 +1,162 @@
+/* estilo geral da pagina cordenador*/
+
+body {
+  background-color: var(--fundo-gelo) !important;
+}
+
+.layout {
+  display: flex;
+  width: 100%;
+}
+
+/* estilo do header */
+
+header {
+  background-color: var(--azul-escuro);
+  height: 100px;
+  color: white;
+  width: 100%;
+}
+
+/* estilo do menu lateral */
+
+.sidebar {
+  background-color: var(--azul-escuro);
+  height: 100vh;
+  width: 100px;
+}
+
+.sidebar nav {
+  flex-grow: 1;
+}
+
+.sidebar nav ul {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+}
+
+.sidebar nav ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.sidebar nav ul li a {
+  display: block;
+  color: white;
+  width: 100%;
+  text-align: center;
+  transition: 0.2s;
+}
+
+.sidebar nav ul li a i {
+  display: block;
+  font-size: 35px;
+}
+
+.sidebar nav ul li a.ativo {
+  background-color: var(--fundo-lista);
+  color: var(--azul-claro);
+  border-left: 5px solid var(--azul-claro);
+  font-weight: bold;
+}
+
+.sidebar .botao-logout {
+  margin-bottom: 0.5em;
+}
+
+.sidebar .botao-logout button {
+  background: none;
+  border: none;
+  transition: 0.2s;
+}
+
+.sidebar .botao-logout button:hover {
+  transform: scale(1.05);
+}
+
+.sidebar .botao-logout button i {
+  font-size: 35px;
+}
+
+/* componentes padrao como botoes*/
+
+.botao-cadastro {
+  background-color: var(--fundo-botao-verde);
+  border: none;
+  height: 45px;
+  border-radius: 20px;
+  width: 200px;
+  color: white;
+}
+
+.botoes-cadastro-excluir {
+  display: flex;
+  gap: 2.5em;
+}
+
+.botao-excluir {
+  background-color: var(--fundo-botao-vermelho);
+  border: none;
+  height: 45px;
+  border-radius: 20px;
+  width: 200px;
+  color: white;
+}
+
+.barra-pesquisa {
+  background-color: var(--azul-claro-50);
+  border: none;
+  border-radius: 20px;
+  height: 45px;
+}
+
+.barra-pesquisa::placeholder {
+  color: white;
+}
+
+.input-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* componentes dos formularios de cadastro */
+
+.modal-estilo {
+  background-color: var(--azul-escuro);
+  color: white;
+  border-radius: 20px;
+}
+
+.input-formulario-cadastro {
+  border-radius: 20px;
+  background-color: rgba(107, 179, 242, 0.5);
+  border: none;
+  height: 50px;
+}
+
+.input-formulario-cadastro::placeholder {
+  color: white;
+}
+
+.botao-icone-sair {
+  font-size: 1.5em;
+  background: none;
+  border: none;
+  color: white;
+  padding: calc(var(--bs-modal-header-padding-y) * 0.5) calc(var(--bs-modal-header-padding-x) * 0.5);
+  margin: calc(-0.5 * var(--bs-modal-header-padding-y)) calc(-0.5 * var(--bs-modal-header-padding-x))
+    calc(-0.5 * var(--bs-modal-header-padding-y)) auto;
+}
+
+.input-com-icone {
+  background-image: url("../../icones\ svg/search.svg");
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-size: 20px 20px;
+  padding-left: 40px !important;
+}

@@ -1,3 +1,81 @@
 <article>
-  <h1>Ambulâncias</h1>
+  <div class="interface">
+    <h1>Ambulâncias</h1>
+    <section id="controles-lista" class="d-flex align-items-center justify-content-between mb-4 mt-4">
+      <div class="botoes-cadastro-excluir">
+        <button type="button" class="botao-cadastro" data-bs-toggle="modal" data-bs-target="#myModal">
+          Cadastrar ambulância
+        </button>
+        <button type="button" class="botao-excluir" id="btn-excluir-selecionados">Excluir Selecionados</button>
+      </div>
+      <div class="input-group w-50">
+        <input
+          type="text"
+          class="form-control barra-pesquisa input-com-icone"
+          id="input-busca-ambulancias"
+          placeholder="Buscar por Id, Nome, CPF ou Placa..."
+        />
+      </div>
+    </section>
+    <div class="modal" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content modal-estilo">
+          <div class="modal-header">
+            <h4 class="modal-title">Informações do motorista</h4>
+            <button type="button" class="botao-icone-sair" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-4 mt-3">
+                <label for="nome" class="form-label">*Nome do motorista:</label>
+                <input
+                  type="text"
+                  class="form-control input-formulario-cadastro"
+                  id="nome-motorista"
+                  placeholder="Nome"
+                  name="nome"
+                />
+              </div>
+              <div class="mb-4">
+                <label for="cpf" class="form-label">*Cpf:</label>
+                <input
+                  type="text"
+                  class="form-control input-formulario-cadastro"
+                  id="cpf-motorista"
+                  placeholder="ex: 00000000000"
+                  name="cpf-motorista"
+                />
+              </div>
+              <div class="mb-4">
+                <label for="cnh" class="form-label">*CNH:</label>
+                <input
+                  type="text"
+                  class="form-control input-formulario-cadastro"
+                  id="cnh-motorista"
+                  placeholder="Carteira de motorista"
+                  name="cnh-motorista"
+                />
+              </div>
+              <h4 class="mt-4 mb-4">Informações da ambulância</h4>
+              <div class="mb-4">
+                <label for="placa-ambu" class="form-label">*Placa da ambulância:</label>
+                <input
+                  type="text"
+                  class="form-control input-formulario-cadastro"
+                  id="placa-ambu"
+                  placeholder="Placa da ambulância"
+                  name="placa-ambu"
+                />
+              </div>
+              <div class="botoes-cadastro-excluir mt-4">
+                <button type="button" class="botao-cadastro" id="enviar-informacoes-motorista">Cadastrar</button>
+                <button type="button" class="botao-excluir" data-bs-dismiss="modal">Cancelar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="listaAmbulancias"></div>
+  </div>
 </article>

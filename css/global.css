@@ -9,4 +9,11 @@
   --azul-claro: #6bb3f2;
   --azul-claro-50: rgba(107, 179, 242, 0.5);
   --fundo-gelo: #edf3fb;
+  --fundo-botao-verde: #5fed43;
+  --fundo-botao-vermelho: #dc5050;
+  --fundo-lista: rgba(198, 198, 198, 0.5);
+}
+
+.interface {
+  padding: 5% 8%;
 }
