@@ -1,3 +1,102 @@
 <article>
-  <h1>Funcionários</h1>
+  <div class="interface">
+    <h1>Funcionários</h1>
+    <section id="controles-lista" class="d-flex align-items-center justify-content-between mb-4 mt-4">
+      <div class="botoes-cadastro-excluir">
+        <button type="button" class="botao-cadastro" data-bs-toggle="modal" data-bs-target="#modal-funcionario">
+          Cadastrar Funcionário
+        </button>
+        <button type="button" class="botao-excluir" id="btn-excluir-selecionados-func">Excluir Selecionados</button>
+      </div>
+      <div class="input-group w-50">
+        <input
+          type="text"
+          class="form-control barra-pesquisa input-com-icone"
+          id="input-busca-funcionarios"
+          placeholder="Buscar por ID, Nome, CPF ou Cargo..."
+        />
+      </div>
+    </section>
+    
+    <div class="modal" id="modal-funcionario">
+      <div class="modal-dialog">
+        <div class="modal-content modal-estilo">
+          <div class="modal-header">
+            <h4 class="modal-title">Informações do Funcionário</h4>
+            <button type="button" class="botao-icone-sair" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i></button>
+          </div>
+          <div class="modal-body">
+            <form id="form-cadastro-funcionario">
+              <input type="hidden" id="funcionario-edit-id">
+              
+              <div class="mb-4 mt-3">
+                <label for="nome-funcionario" class="form-label">*Nome:</label>
+                <input
+                  type="text"
+                  class="form-control input-formulario-cadastro"
+                  id="nome-funcionario"
+                  placeholder="Nome completo"
+                  name="nome"
+                  required
+                />
+              </div>
+              <div class="mb-4">
+                <label for="cpf-funcionario" class="form-label">*CPF:</label>
+                <input
+                  type="text"
+                  class="form-control input-formulario-cadastro"
+                  id="cpf-funcionario"
+                  placeholder="ex: 000.000.000-00"
+                  name="cpf-funcionario"
+                  required
+                />
+              </div>
+              <div class="mb-4">
+                <label for="cargo-funcionario" class="form-label">*Cargo:</label>
+                <select 
+                  class="form-control input-formulario-cadastro" 
+                  id="cargo-funcionario" 
+                  name="cargo-funcionario" 
+                  required
+                >
+                    <option value="">Selecione um cargo</option>
+                    <option value="Medico">Médico</option>
+                    <option value="Enfermeiro">Enfermeiro</option>
+                    <option value="Recepcionista">Recepcionista</option>
+                    <option value="Coordenador">Coordenador</option>
+                </select>
+              </div>
+              <div class="mb-4">
+                <label for="telefone-funcionario" class="form-label">Telefone:</label>
+                <input
+                  type="text"
+                  class="form-control input-formulario-cadastro"
+                  id="telefone-funcionario"
+                  placeholder="Telefone de contato"
+                  name="telefone"
+                />
+              </div>
+              <div class="mb-4">
+                <label for="email-funcionario" class="form-label">E-mail:</label>
+                <input
+                  type="email"
+                  class="form-control input-formulario-cadastro"
+                  id="email-funcionario"
+                  placeholder="Email"
+                  name="email"
+                />
+              </div>
+              
+              <div class="botoes-cadastro-excluir mt-4">
+                <button type="button" class="botao-cadastro" id="enviar-informacoes-funcionario">Cadastrar</button>
+                <button type="button" class="botao-excluir" data-bs-dismiss="modal">Cancelar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="listaFuncionarios"></div>
+  </div>
 </article>
