@@ -1,0 +1,82 @@
+/* estilo da tabela funcionarios (copia do ambulancias.css)*/
+
+#listaFuncionarios table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--azul-escuro);
+  color: white;
+  border-radius: 20px;
+}
+
+#listaFuncionarios tr:first-child td {
+  background-color: var(--azul-escuro);
+  font-weight: bold;
+  padding: 10px;
+  text-align: left;
+  border-radius: 20px;
+}
+
+#listaFuncionarios td {
+  padding: 8px;
+}
+
+#listaFuncionarios tr:last-child td:last-child {
+  border-bottom-right-radius: 20px;
+}
+
+#listaFuncionarios tr:last-child td:first-child {
+  border-bottom-left-radius: 20px;
+}
+
+#listaFuncionarios tr {
+  background-color: var(--fundo-lista);
+}
+
+/* Usamos uma classe específica para o checkbox de exclusão de Funcionários */
+.item-para-excluir-func {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+/* CÓDIGO ADICIONADO ABAIXO */
+
+/* Estilo para o botão de editar na tabela */
+.botao-editar {
+padding: 5px 10px;
+background-color: #0d6efd; /* Azul padrão do Bootstrap */
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+font-size: 14px;
+}
+
+.botao-editar:hover {
+background-color: #0b5ed7;
+}
+
+/* Estilo para a notificação customizada (Toast) */
+.toast-aviso {
+visibility: hidden;
+opacity: 0;
+position: fixed;
+right: 30px;
+bottom: 30px;
+min-width: 280px;
+background-color: #d9534f; /* Cor vermelha do erro */
+color: #fff; /* Texto branco */
+text-align: left;
+border-radius: 5px;
+padding: 16px;
+z-index: 1000; /* Garante que fique por cima de outros elementos */
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+transition: visibility 0.5s, opacity 0.5s, transform 0.5s; /* Animação suave */
+transform: translateX(100%); /* Começa fora da tela à direita */
+}
+
+/* Classe para mostrar a notificação com animação */
+.toast-aviso.show {
+visibility: visible;
+opacity: 1;
+transform: translateX(0); /* Move para a posição final */
+}
