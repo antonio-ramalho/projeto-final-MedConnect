@@ -1,0 +1,36 @@
+#listaMedicamentos table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--azul-escuro);
+  color: white;
+  border-radius: 20px;
+}
+
+#listaMedicamentos tr:first-child td {
+  background-color: var(--azul-escuro);
+  font-weight: bold;
+  padding: 10px;
+  text-align: left;
+  border-radius: 20px;
+}
+
+#listaMedicamentos td {
+  padding: 8px;
+}
+
+#listaMedicamentos tr:last-child td:last-child {
+  border-bottom-right-radius: 20px;
+}
+
+#listaMedicamentos tr:last-child td:first-child {
+  border-bottom-left-radius: 20px;
+}
+
+#listaMedicamentos tr {
+  background-color: var(--fundo-lista);
+}
+
+.item-para-excluir {
+  cursor: pointer;
+  transform: scale(1.2);
+}

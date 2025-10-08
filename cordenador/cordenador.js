@@ -13,6 +13,18 @@ import {carregaItens as carregaFuncionarios} from "./js/funcionarios.js";
 import {gerenciarFormularioFuncionario} from "./js/funcionarios.js";
 import {adicionaListenerDeBusca as adicionaListenerDeBuscaFunc} from "./js/funcionarios.js";
 
+/* Funções de exames */
+import {selecionaItenASerExcluido as selecionaItenASerExcluidoExam} from "./js/exames.js";
+import {adicionaListenerDeBusca as adicionaListenerDeBuscaExam} from "./js/exames.js";
+import {cadastrarExames} from "./js/exames.js";
+import {carregaItens as carregaItensExam} from "./js/exames.js";
+
+/* Funções de exames */
+import {selecionaItenASerExcluido as selecionaItenASerExcluidoMed} from "./js/medicamentos.js";
+import {adicionaListenerDeBusca as adicionaListenerDeBuscaMed} from "./js/medicamentos.js";
+import {cadastrarMedicamentos} from "./js/medicamentos.js";
+import {carregaItens as carregaItensMed} from "./js/medicamentos.js";
+
 /* funcoes do cordenador*/
 
 function verSeEstaLogado() {
@@ -40,9 +52,13 @@ export function carregarPaginaHtml(url) {
     .then((html) => {
       conteudoPrincipal.innerHTML = html;
       if (url.includes("ambulancias.html")) {
-        carregaItens(); // Função de ambulancia.js
+        carregaItens();
       } else if (url.includes("funcionarios.html")) {
-        carregaFuncionarios(); // Alias para a função carregaItens de funcionarios.js
+        carregaFuncionarios();
+      } else if (url.includes("exames.html")) {
+        carregaItensExam();
+      } else if (url.includes("medicamentos.html")) {
+        carregaItensMed();
       }
     })
     .catch((error) => {
@@ -88,4 +104,14 @@ document.addEventListener("DOMContentLoaded", () => {
   selecionaItenASerExcluidoFunc();
   gerenciarFormularioFuncionario();
   adicionaListenerDeBuscaFunc();
+
+  // FUNÇÕES ATIVADAS PARA EXAMES
+  selecionaItenASerExcluidoExam();
+  cadastrarExames();
+  adicionaListenerDeBuscaExam();
+
+  // FUNÇÕES ATIVADAS PARA MEDICAMENTOS
+  selecionaItenASerExcluidoMed();
+  cadastrarMedicamentos();
+  adicionaListenerDeBuscaMed();
 });

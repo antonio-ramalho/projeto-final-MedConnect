@@ -13,13 +13,13 @@ function excluirSelecionados(idsParaExcluir) {
     return;
   }
 
-  var lista = JSON.parse(localStorage.getItem("listaClientes"));
+  var lista = JSON.parse(localStorage.getItem("listaExamesStorage"));
 
   const novaLista = lista.filter((item) => {
     return !idsParaExcluir.includes(String(item.id));
   });
 
-  localStorage.setItem("listaClientes", JSON.stringify(novaLista));
+  localStorage.setItem("listaExamesStorage", JSON.stringify(novaLista));
   carregaItens();
 }
 
@@ -57,10 +57,7 @@ function aplicarFiltro(listaCompleta, searchTerm) {
   return listaCompleta.filter((item) => {
     const idString = String(item.id);
 
-    return (
-      item.nome.toLowerCase().includes(termo) ||
-      idString.includes(termo)
-    );
+    return item.nome.toLowerCase().includes(termo) || idString.includes(termo);
   });
 }
 
@@ -71,8 +68,8 @@ export function carregaItens(searchTerm = "") {
     return;
   }
 
-  if (localStorage.getItem("listaClientes")) {
-    var listaCompleta = JSON.parse(localStorage.getItem("listaClientes"));
+  if (localStorage.getItem("listaExamesStorage")) {
+    var listaCompleta = JSON.parse(localStorage.getItem("listaExamesStorage"));
     var listaFiltrada = aplicarFiltro(listaCompleta, searchTerm);
     var html = "";
 
@@ -97,7 +94,7 @@ export function carregaItens(searchTerm = "") {
     var obj = {id: 1, nome: "teste"};
     var lista = [];
     lista.push(obj);
-    localStorage.setItem("listaClientes", JSON.stringify(lista));
+    localStorage.setItem("listaExamesStorage", JSON.stringify(lista));
     carregaItens();
   }
 }
@@ -111,13 +108,13 @@ export function adicionaListenerDeBusca() {
 }
 
 function armazenar() {
-  var listaClientes = JSON.parse(localStorage.getItem("listaClientes"));
+  var listaClientes = JSON.parse(localStorage.getItem("listaExamesStorage"));
   const novoId = gerarProximoId(listaClientes);
 
   var obj = {id: novoId, nome: ""};
   obj.nome = document.getElementById("nome-exame").value;
   listaClientes.push(obj);
-  localStorage.setItem("listaClientes", JSON.stringify(listaClientes));
+  localStorage.setItem("listaExamesStorage", JSON.stringify(listaClientes));
 }
 
 export function cadastrarExames() {
