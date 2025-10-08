@@ -40,17 +40,15 @@
 /* CÓDIGO ADICIONADO ABAIXO */
 
 .botao-editar {
-  padding: 5px 10px;
-  background-color: #0d6efd;
-  color: white;
+  background-image: url(../../svg/pencil-square.svg);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-size: 20px 20px;
+  padding-left: 40px !important;
+  height: 20px;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.botao-editar:hover {
-  background-color: #0b5ed7;
+  background-color: transparent;
+  display: block;
 }
 
 .toast-aviso {

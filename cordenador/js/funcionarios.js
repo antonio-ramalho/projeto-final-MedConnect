@@ -15,7 +15,7 @@ function mostrarNotificacao(mensagem) {
 
     setTimeout(() => {
       notificacao.classList.remove("show");
-    }, 5000);
+    }, 3000);
   }
 }
 
@@ -27,6 +27,8 @@ export function excluirSelecionados(idsParaExcluir) {
 
   if (!confirm(`Tem certeza que deseja excluir ${idsParaExcluir.length} item(ns) selecionado(s)?`)) {
     return;
+  } else {
+    mostrarNotificacao("Funcionário excluido com sucesso!.");
   }
 
   var lista = JSON.parse(localStorage.getItem(CHAVE_FUNCIONARIOS)) || [];
@@ -205,7 +207,7 @@ export function carregaItens(searchTerm = "") {
               <td>${item.cpf}</td>
               <td>${item.cargo}</td>
               <td>${item.telefone}</td>
-              <td><button type="button" class="botao-editar" data-id="${item.id}">Editar</button></td>
+              <td><button type="button" class="botao-editar" data-id="${item.id}"></button></td>
             </tr>
           `;
   }

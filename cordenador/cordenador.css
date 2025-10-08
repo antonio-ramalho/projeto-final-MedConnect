@@ -154,7 +154,7 @@ header {
 }
 
 .input-com-icone {
-  background-image: url("../../icones\ svg/search.svg");
+  background-image: url("../svg/search.svg");
   background-repeat: no-repeat;
   background-position: 10px center;
   background-size: 20px 20px;
