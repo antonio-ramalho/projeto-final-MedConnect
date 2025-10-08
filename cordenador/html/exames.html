@@ -3,7 +3,7 @@
     <h1>Exames</h1>
     <section class="d-flex align-items-center justify-content-between mb-4 mt-4">
       <div class="botoes-cadastro-excluir">
-        <button type="button" class="botao-cadastro" data-bs-toggle="modal" data-bs-target="#myModal">
+        <button type="button" class="botao-cadastro" data-bs-toggle="modal" data-bs-target="#modal-exame">
           Cadastrar Exame
         </button>
         <button type="button" class="botao-excluir" id="btn-excluir-selecionados">Excluir Selecionados</button>
@@ -17,7 +17,7 @@
         />
       </div>
     </section>
-    <div class="modal" id="myModal">
+    <div class="modal" id="modal-exame">
       <div class="modal-dialog">
         <div class="modal-content modal-estilo">
           <div class="modal-header">
@@ -25,20 +25,23 @@
             <button type="button" class="botao-icone-sair" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i></button>
           </div>
           <div class="modal-body">
-            <div class="mb-4 mt-3">
-              <label for="nome" class="form-label">*Nome do exame:</label>
-              <input
-                type="text"
-                class="form-control input-formulario-cadastro"
-                id="nome-exame"
-                placeholder="Nome"
-                name="nome"
-              />
-            </div>
-            <div class="botoes-cadastro-excluir mt-4">
-              <button type="button" class="botao-cadastro" id="enviar-informacoes-exame">Cadastrar</button>
-              <button type="button" class="botao-excluir" data-bs-dismiss="modal">Cancelar</button>
-            </div>
+            <form id="form-cadastro-exame">
+              <input type="hidden" id="exame-edit-id">
+              <div class="mb-4 mt-3">
+                <label for="nome" class="form-label">*Nome do exame:</label>
+                <input
+                  type="text"
+                  class="form-control input-formulario-cadastro"
+                  id="nome-exame"
+                  placeholder="Nome"
+                  name="nome"
+                />
+              </div>
+              <div class="botoes-cadastro-excluir mt-4">
+                <button type="button" class="botao-cadastro" id="enviar-informacoes-exame">Cadastrar</button>
+                <button type="button" class="botao-excluir" data-bs-dismiss="modal">Cancelar</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>

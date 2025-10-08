@@ -15,11 +15,11 @@ import {adicionaListenerDeBusca as adicionaListenerDeBuscaFunc} from "./js/funci
 
 /* Funções de exames */
 import {selecionaItenASerExcluido as selecionaItenASerExcluidoExam} from "./js/exames.js";
+import {carregaItens as carregaExames} from "./js/exames.js";
+import {gerenciarFormularioExame} from "./js/exames.js";
 import {adicionaListenerDeBusca as adicionaListenerDeBuscaExam} from "./js/exames.js";
-import {cadastrarExames} from "./js/exames.js";
-import {carregaItens as carregaItensExam} from "./js/exames.js";
 
-/* Funções de exames */
+/* Funções de medicamentos */
 import {selecionaItenASerExcluido as selecionaItenASerExcluidoMed} from "./js/medicamentos.js";
 import {adicionaListenerDeBusca as adicionaListenerDeBuscaMed} from "./js/medicamentos.js";
 import {cadastrarMedicamentos} from "./js/medicamentos.js";
@@ -56,7 +56,7 @@ export function carregarPaginaHtml(url) {
       } else if (url.includes("funcionarios.html")) {
         carregaFuncionarios();
       } else if (url.includes("exames.html")) {
-        carregaItensExam();
+        carregaExames();
       } else if (url.includes("medicamentos.html")) {
         carregaItensMed();
       }
@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // FUNÇÕES ATIVADAS PARA EXAMES
   selecionaItenASerExcluidoExam();
-  cadastrarExames();
+  gerenciarFormularioExame();
   adicionaListenerDeBuscaExam();
 
   // FUNÇÕES ATIVADAS PARA MEDICAMENTOS
