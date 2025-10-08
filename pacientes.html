@@ -1,0 +1,121 @@
+<article>
+    <article>
+        <div class="container-fluid p-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <h2 class="m-0">Pacientes</h2>
+              <button
+                class="botao-cadastro"
+                data-bs-toggle="modal"
+                data-bs-target="#pacienteModal"
+              >
+                Cadastrar Paciente
+              </button>
+            </div>
+          
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <div>
+                </div>
+              <div class="w-50">
+                <input
+                  type="text"
+                  id="busca-paciente"
+                  class="form-control barra-pesquisa input-com-icone"
+                  placeholder="Pesquisar por nome ou CPF..."
+                />
+              </div>
+            </div>
+          
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <thead class="table-dark">
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Endereço</th>
+                    <th scope="col">CPF</th>
+                    <th scope="col">Nº Matrícula</th>
+                    <th scope="col">Ações</th>
+                  </tr>
+                </thead>
+                <tbody id="tabela-pacientes-corpo">
+                  </tbody>
+              </table>
+            </div>
+          </div>
+          
+          <div
+            class="modal fade"
+            id="pacienteModal"
+            tabindex="-1"
+            aria-labelledby="pacienteModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content modal-estilo">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="pacienteModalLabel">Cadastrar Paciente</h5>
+                  <button
+                    type="button"
+                    class="botao-icone-sair"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <i class="bi bi-x-lg"></i>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form id="form-paciente">
+                    <input type="hidden" id="pacienteId" />
+                    <div class="mb-3">
+                      <input
+                        type="text"
+                        class="form-control input-formulario-cadastro"
+                        id="nome-paciente"
+                        placeholder="Nome completo"
+                        required
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <input
+                        type="text"
+                        class="form-control input-formulario-cadastro"
+                        id="endereco-paciente"
+                        placeholder="Endereço"
+                        required
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <input
+                        type="text"
+                        class="form-control input-formulario-cadastro"
+                        id="cpf-paciente"
+                        placeholder="CPF"
+                        required
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <input
+                        type="text"
+                        class="form-control input-formulario-cadastro"
+                        id="matricula-paciente"
+                        placeholder="Nº Matrícula"
+                        required
+                      />
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Cancelar
+                      </button>
+                      <button type="submit" class="botao-cadastro">Salvar</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+</article>

@@ -1,0 +1,35 @@
+/* css/pacientes.css */
+
+.acoes-botoes button {
+    background: none;
+    border: none;
+    color: var(--azul-escuro);
+    font-size: 1.2rem;
+    margin: 0 5px;
+    transition: transform 0.2s;
+  }
+  
+  .acoes-botoes button:hover {
+    transform: scale(1.1);
+    color: var(--azul-claro);
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --azul-escuro: #013561;
+    --azul-claro: #6bb3f2;
+    --azul-claro-50: rgba(107, 179, 242, 0.5);
+    --fundo-gelo: #edf3fb;
+    --fundo-botao-verde: #5fed43;
+    --fundo-botao-vermelho: #dc5050;
+    --fundo-lista: rgba(198, 198, 198, 0.5);
+  }
+  
+  .interface {
+    padding: 5% 8%;
+  }
+  
